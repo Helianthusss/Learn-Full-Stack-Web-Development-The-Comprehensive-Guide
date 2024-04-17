@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calendar</title>
+    <style type="text/css">
+        th, td {
+        border: thin solid black;
+        padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Gộp cột</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>8 am</th>
+            <th>9 am</th>
+            <th>10 am</th>
+            <th>11 am</th>
+            <th>12 pm</th>
+        </tr>
+        <tr>
+            <th>Monday</th>
+            <td colspan="2">Medical appointment</td>
+            <td>Conference call</td>
+            <td>Meeting with customer</td>
+            <td>Lunch</td>
+        </tr>
+        <tr>
+            <th>Tuesday</th>
+            <td>Garage</td>
+            <td colspan="3">Shopping</td>
+            <td>Lunch</td>
+        </tr>
+        <tr>
+            <th>Wednesday</th>
+            <td colspan="5">Vacation</td>
+        </tr>
+        <tr>
+            <th>Thursday</th>
+            <td colspan="5">Vacation</td>
+        </tr>
+        <tr>
+            <th>Friday</th>
+            <td colspan="5">Vacation</td>
+        </tr>
+    </table>
+
+    <h3>Gộp hàng</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <th>8 am</th>
+            <td rowspan="2">Medical appointment</td>
+            <td>Garage</td>
+            <td rowspan="5">Vacation</td>
+            <td rowspan="5">Vacation</td>
+            <td rowspan="5">Vacation</td>
+        </tr>
+        <tr>
+            <th>9 am</th>
+            <td rowspan="3">Shopping</td>
+        </tr>
+        <tr>
+            <th>10 am</th>
+            <td>Conference call</td>
+        </tr>
+        <tr>
+            <th>11 am</th>
+            <td>Meeting with customer</td>
+        </tr>
+        <tr>
+            <th>12 pm</th>
+            <td>Lunch</td>
+            <td>Lunch</td>
+        </tr>
+    </table>
+
+    <h3> Tạo form</h3>
+
+    <form action="/services/handle-form" method="POST">
+        <fieldset>
+          <legend>Personal details</legend>
+          <label>
+            First name:
+            <input type="text" name="firstname" size="20" maxlength="50" />
+          </label>
+          <br>
+          <label>
+            Last name:
+            <input type="text" name="lastname" size="30" maxlength="70" />
+          </label>
+          <br>
+          <label>
+            Email:
+            <input type="email" name="email" size="30" maxlength="70" />
+          </label>
+          <br>
+          <label>
+            Password:
+            <input type="password" name="password" size="20" maxlength="30" />
+          </label>
+          <br>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Questionnaire</legend>
+          <p>
+            <label for="browser">
+              Which browser do you use?
+            </label>
+            <select id="browser" name="browser">
+              <option value="chrome">Google Chrome</option>
+              <option value="edge">Microsoft Edge</option>
+              <option value="firefox">Mozilla Firefox</option>
+              <option value="opera">Opera</option>
+              <option value="safari">Safari</option>
+            </select>
+          </p>
+          <p>
+            Do you like our website?
+            <br>
+            <label>
+              <input type="radio" name="feedback" value="yes" />
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="feedback" value="no" />
+              No
+            </label>
+          </p>
+          <p>
+            <br>
+            <label for="improvements">
+              Do you have any suggestions for improvement?
+            </label>
+            <br>
+            <textarea id="improvements" name="improvements" rows="5" cols="50">
+            </textarea>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" name="newsletter" />
+              Would you like to subscribe to our newsletter?
+            </label>
+          </p>
+        </fieldset>
+        <input type="submit" value="Submit form" />
+      </form>
+</body>
+</html> 
